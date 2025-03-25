@@ -23,6 +23,7 @@ app.get('', (req, res) => {
         title: 'Weather App',
         name: 'Danylo'
     })
+    console.log(title);
 })
 
 app.get('/about', (req, res) => {

@@ -1,5 +1,7 @@
 const request = require('postman-request');
 
+
+
 const forecast = (latitude, longitude, callback) => {
     const url = 'https://api.weatherstack.com/current?access_key=cd592059a29e43ab61e7e155e401ae38&query='+latitude+ ',' + longitude+'&units=m'
 
@@ -12,7 +14,9 @@ const forecast = (latitude, longitude, callback) => {
         } else {
             callback(undefined, { temperature: body.current.temperature, 
                 weather_descriptions: body.current.weather_descriptions, 
-                location: body.location.name
+                location: body.location.name,
+                sunrise: body.current.astro.sunrise,
+                sunset: body.current.astro.sunset
             });
         }
     })
